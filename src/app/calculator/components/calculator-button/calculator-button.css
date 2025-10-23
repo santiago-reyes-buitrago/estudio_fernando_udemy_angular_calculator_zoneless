@@ -1,0 +1,13 @@
+@reference "tailwindcss";
+
+.calculator-button {
+  @apply w-full h-16 outline-none focus:outline-none  text-white opacity-50 text-xl font-light hover:opacity-20;
+}
+
+.operational-button {
+  @apply bg-indigo-700 opacity-10;
+}
+
+.number-button {
+  @apply hover:bg-indigo-700;
+}
