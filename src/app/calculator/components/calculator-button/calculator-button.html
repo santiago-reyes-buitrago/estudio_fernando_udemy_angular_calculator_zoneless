@@ -1,6 +1,6 @@
 <!--<div class="w-1/4 border-r border-b border-indigo-400">-->
 <!--</div>-->
 
-<button class="calculator-button">
+<button class="calculator-button" [class.operational-button]="isOperationButton()" [class.number-button]="!isOperationButton()" >
   <ng-content/>
 </button>

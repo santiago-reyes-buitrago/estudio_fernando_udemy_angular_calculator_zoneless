@@ -4,6 +4,7 @@ import {CalculatorButton} from '@calculator/components/calculator-button/calcula
 interface CalculatorButtons {
   value: string;
   isOperation: boolean;
+  size: number;
 }
 
 @Component({
@@ -17,24 +18,24 @@ interface CalculatorButtons {
 export class Calculator {
   protected buttons:CalculatorButtons[] =
     [
-      {value:'C', isOperation:true},
-      {value:'+/-',isOperation: true},
-      {value:'%',isOperation: true},
-      {value:'÷',isOperation: true},
-      {value:'7',isOperation: false},
-      {value:'8',isOperation: false},
-      {value:'9',isOperation: false},
-      {value:'x',isOperation: true},
-      {value:'4',isOperation: false},
-      {value:'5',isOperation: false},
-      {value:'6',isOperation: false},
-      {value:'-',isOperation: true},
-      {value:'1',isOperation: false},
-      {value:'2',isOperation: false},
-      {value:'3',isOperation: false},
-      {value:'+',isOperation: true},
-      {value:'0',isOperation: false},
-      {value:'.',isOperation: true},
-      {value:'=',isOperation: true}
+      {value:'C', isOperation:true, size: 1},
+      {value:'+/-',isOperation: true, size: 1},
+      {value:'%',isOperation: true, size: 1},
+      {value:'÷',isOperation: true, size: 1},
+      {value:'7',isOperation: false, size: 1},
+      {value:'8',isOperation: false, size: 1},
+      {value:'9',isOperation: false, size: 1},
+      {value:'x',isOperation: true, size: 1},
+      {value:'4',isOperation: false, size: 1},
+      {value:'5',isOperation: false, size: 1},
+      {value:'6',isOperation: false, size: 1},
+      {value:'-',isOperation: true, size: 1},
+      {value:'1',isOperation: false, size: 1},
+      {value:'2',isOperation: false, size: 1},
+      {value:'3',isOperation: false, size: 1},
+      {value:'+',isOperation: true, size: 1},
+      {value:'0',isOperation: false, size: 1},
+      {value:'.',isOperation: true, size: 1},
+      {value:'=',isOperation: true, size: 2}
     ];
 }

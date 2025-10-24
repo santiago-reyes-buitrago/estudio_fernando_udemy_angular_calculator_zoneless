@@ -7,19 +7,20 @@ import {ChangeDetectionStrategy, Component, HostBinding, input} from '@angular/c
   styleUrl: './calculator-button.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: "w-1/4 border-r border-b border-indigo-400"
-  }
+    class: "border-r border-b border-indigo-400"
+  },
+  // encapsulation: ViewEncapsulation.None
 })
 export class CalculatorButton {
   isOperationButton = input<boolean>(false)
   // isOperationButton = input(false,
   //   {transform: (value: string|boolean)=> typeof value === 'string' ? value === '': value}
   // )
-  @HostBinding('class.operational-button') get operationalButton(){
-    return this.isOperationButton()
-  }
-
-  @HostBinding('class.number-button') get numberButton(){
-    return !this.isOperationButton()
-  }
+  // @HostBinding('class.operational-button') get operationalButton(){
+  //   return this.isOperationButton()
+  // }
+  //
+  // @HostBinding('class.number-button') get numberButton(){
+  //   return !this.isOperationButton()
+  // }
 }

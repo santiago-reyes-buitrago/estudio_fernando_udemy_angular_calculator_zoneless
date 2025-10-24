@@ -1,11 +1,21 @@
 
 <div class="w-full h-40 bg-gradient-to-b from-gray-800 to-gray-700 flex items-end text-right">
-  <div class="w-full py-5 px-6 text-6xl text-white font-thin">340.0</div>
+  <div class="w-full py-5 px-6 text-6xl text-white font-thin">
+    <span class="text-4xl">50 +</span>
+    <br/>
+    <span>340.0</span>
+  </div>
 </div>
 <div class="w-full bg-gradient-to-b from-indigo-400 to-indigo-500">
   <div class="flex w-full flex-wrap">
     @for (button of buttons;track $index){
-      <calculator-button [isOperationButton]="button.isOperation">{{button.value}}</calculator-button>
+      <calculator-button
+        [class.grid-spacing-1]="button.size === 1"
+        [class.grid-spacing-2]="button.size === 2"
+        [isOperationButton]="button.isOperation"
+        >
+        {{button.value}}
+      </calculator-button>
     } @empty {
       <div class="w-full border-r border-b border-indigo-400">
         No hay botones

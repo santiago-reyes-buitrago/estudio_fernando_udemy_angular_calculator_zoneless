@@ -5,7 +5,7 @@
 }
 
 .operational-button {
-  @apply bg-indigo-700 opacity-10;
+  @apply bg-indigo-900 opacity-25;
 }
 
 .number-button {
