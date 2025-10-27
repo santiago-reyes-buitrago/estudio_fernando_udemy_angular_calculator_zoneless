@@ -10,8 +10,8 @@
   <div class="flex w-full flex-wrap">
     @for (button of buttons;track $index){
       <calculator-button
-        [class.grid-spacing-1]="button.size === 1"
-        [class.grid-spacing-2]="button.size === 2"
+        [size] = "`grid-spacing-${button.size}`"
+        (onClick)="handleClickEvent($event)"
         [isOperationButton]="button.isOperation"
         >
         {{button.value}}
@@ -24,3 +24,7 @@
   </div>
 
 </div>
+
+<!--[size]="`w-${button.size}/4`"-->
+<!--[class.grid-spacing-1]="button.size === 1"-->
+<!--[class.grid-spacing-2]="button.size === 2"-->

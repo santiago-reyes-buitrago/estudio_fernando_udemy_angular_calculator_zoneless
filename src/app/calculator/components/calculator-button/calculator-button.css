@@ -11,3 +11,7 @@
 .number-button {
   @apply hover:bg-indigo-700;
 }
+
+.is-pressed {
+  @apply bg-indigo-900 opacity-20;
+}
