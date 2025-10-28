@@ -1,5 +1,6 @@
-import {ChangeDetectionStrategy, Component, HostListener, viewChildren} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, inject, viewChildren} from '@angular/core';
 import {CalculatorButton} from '@calculator/components/calculator-button/calculator-button';
+import {CalculatorService} from '@calculator/core/services/calculator.service';
 
 interface CalculatorButtons {
   value: string;
@@ -22,8 +23,8 @@ interface CalculatorButtons {
 })
 export class Calculator {
   Calculatorbuttons = viewChildren(CalculatorButton);
-  protected buttons: CalculatorButtons[] =
-    [
+  private calculatorSevice = inject(CalculatorService);
+  protected buttons: CalculatorButtons[] = [
       {value: 'C', isOperation: true, size: 1},
       {value: '+/-', isOperation: true, size: 1},
       {value: '%', isOperation: true, size: 1},
@@ -45,8 +46,15 @@ export class Calculator {
       {value: '=', isOperation: true, size: 2}
     ];
 
+  calculatorTexts = computed(()=> ({
+    subResultText: this.calculatorSevice.subResultText(),
+    lastOperatorText: this.calculatorSevice.lastOperatorText(),
+    resultText: this.calculatorSevice.resultText()
+  }))
+
   handleClickEvent(key: string) {
     console.log({key})
+    this.calculatorSevice.constructNumber(key)
   }
 
   // @HostListener('document:keyup',['$event'])
